@@ -18,12 +18,14 @@ char ** parse_args( char * line ){
     strcpy(temp, token);
     args[i] = malloc(sizeof(temp));
     strcpy(args[i], temp);
-    printf("%s\n", args[i]);
+    printf("Argument: %s\n", args[i]);
     i++;
   }
+  printf("New iteration %s\n", args[4]);
+  i = 0;
   while (i < 6){
-    args[i] = NULL;
     i++;
+    printf("Argument: %s\n", args[i]);
   }
   return args;
 }
@@ -36,9 +38,9 @@ int main(){
   printf("ok\n");
   int i = 0;
   printf("ok\n");
-   for (i = 0; i < 6; i++){
-     printf("%s\n", *(args + i));
-   }
+  for (i = 0; i < 6; i++){
+    printf("%s\n", *(args + i));
+  }
   printf("ok\n");
   char * y[] = {"ls", "-a", "-l", NULL};
   printf("%s\n", args[0]);
