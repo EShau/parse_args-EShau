@@ -6,7 +6,7 @@
 char ** parse_args( char * line );
 
 char ** parse_args( char * line ){
-  char ** args = calloc(8, sizeof(char *));
+  char ** args = malloc(1);
   char line_array[100];
   strcpy(line_array, line);
   char * line_parse = line_array;
@@ -15,6 +15,7 @@ char ** parse_args( char * line ){
     args[i] = strsep(&line_parse, " ");
     printf("%s\n", args[i]);
     i++;
+    args = realloc(args, i);
   }
   args[i] = NULL;
   return args;
